@@ -5,11 +5,11 @@ test('Check Cappuccino removed from Cart after clicking remove', async ({
   menuPage,
 }) => {
   await menuPage.open();
-  await menuPage.clickCappucinoCup();
+  await menuPage.clickCoffeeCup('Cappuccino');
 
   await menuPage.clickCartLink();
   await cartPage.waitForLoading();
 
-  await cartPage.clickRemoveAllCappucinoButton();
+  await cartPage.clickRemoveAllButton('Cappuccino');
   await cartPage.assertNoCoffeeMessageIsVisible();
 });
